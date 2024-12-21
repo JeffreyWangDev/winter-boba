@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Test</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/pathseg@1.2.1/pathseg.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/poly-decomp@0.3.0/build/decomp.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.20.0/matter.js"></script>
+    <svg id = "tree" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+        <path id = "tree_path" fill="white"
+            d="m261.74 400.36-54.52-84.658-1.718-2.668h4.461c15.735 0 25.232-17.413 16.713-30.642l-36.988-57.434-5.522-8.575c15.735 0 25.232-17.413 16.713-30.642l-51.199-79.501c-2.758-4.475-5.055-8.196-7.053-11.194l21.688 11.092c2.565 1.312 5.562-0.807 5.072-3.585l-5.676-32.195c-0.194-1.103 0.182-2.229 1.005-3.01l24.045-22.801c2.075-1.967 0.93-5.395-1.938-5.801l-33.23-4.697c-1.139-0.161-2.123-0.857-2.632-1.86l-14.859-29.291c-1.282-2.528-4.987-2.528-6.27 0l-14.861 29.292c-0.509 1.004-1.494 1.699-2.632 1.86l-33.23 4.697c-2.867 0.405-4.012 3.833-1.938 5.801l24.045 22.801c0.824 0.781 1.2 1.907 1.005 3.01l-5.676 32.195c-0.49 2.778 2.508 4.897 5.072 3.585l21.688-11.092c-1.998 2.998-4.295 6.719-7.053 11.194l-27.11 42.096-24.086 37.404c-8.519 13.229 0.978 30.642 16.713 30.642l-5.522 8.575-36.988 57.434c-8.519 13.229 0.978 30.642 16.713 30.642h4.461l-1.718 2.668-54.52 84.658c-8.52 13.229 0.978 30.642 16.712 30.642h224.12c15.735 0 25.233-17.413 16.713-30.642z">
+        </path>
+    </svg>
+
+    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sleigh"
+    class="svg-inline--fa fa-sleigh fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+    <path id = "snow_path" fill="white"
+        d="M2900 1410h-250l110-120c21.641-57.656-27.249-117.119-88.001-107.032A80.008 80.008 0 0 0 2650 1190l-210 220-210-180c29.097-43.459 9.353-102.691-40-120l20-240h310c57.735 21.43 47.018-167.452 0-150h-160l180-180c30-30-80-140-110-110l-180 180V460c21.43-57.735-27.676-117.018-88.391-106.71-49.445 8.395-79.061 59.692-61.609 106.71v300l-250 20s-100-80-130-50l-160-200 220-210c30-30-80-140-110-110l-110 110V80c21.43-57.735-167.452-47.018-150 0v240l-100-110c-28.026-35.598-140 80-110 110l210 210-160 200c-28.026-35.598-130 60-130 60l-250-40V460c21.43-57.735-167.452-47.018-150 0v140L550 430c-27.448-28.014-130 80-100 110l170 180H470c-57.735-21.43-47.018 167.452 0 150h300l20 250c-40 0-70 120-50 130l-190 160-220-220c-30-30-123.4 70.773-100 100l110 110H90c-57.735-21.43-47.018 167.452 0 150h250l-110 110c-29.207 30.85 72.552 138.014 100 110l220-210 200 160c-30 30 29.763 127.748 50 130l-30 250H470c-57.735-21.43-117.018 27.676-106.71 88.391 8.395 49.445 59.692 79.061 106.71 61.609h150l-170 170c-29.207 30.85 100 110 100 110l170-180v160c-21.43 57.735 27.676 117.018 88.391 106.71 49.445-8.395 79.061-59.692 61.609-106.71v-310l270-10c0 40 110 60 110 60l160 200-210 210c-30 30 90 120 110 100l100-100v250c-21.43 57.735 167.452 47.018 150 0v-260l120 110c29.227 23.4 130-70 100-100l-220-220 160-210c20 20 140 0 140-40l240 10v310c-21.43 57.735 167.452 47.018 150 0v-160l180 180c30.85 29.207 140-80 110-110l-170-170h150c57.735 21.43 47.018-167.452 0-150h-300l-30-270c53.886 15.396 65.009-132.855 40-140l210-130 210 210c28.026 35.598 139.207-79.15 110-110l-110-100h250c57.735 21.43 47.018-167.452 0-150z">
+    </path>
+    
+</svg>
+
+
+
+<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="sleigh"
+class="svg-inline--fa fa-sleigh fa-w-20" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512">
+<path id = "shovel_path" fill="white"
+    d="M477.366 140.02c22.417 8.009 22.417 8.009 27.121 14.757.433 3.641-10.253 17.266-10.899 17.918-6.943 6.193-16.011 8.857-24.569 12.114-10.636 4.069-62.599 47.909-64.638 49.824-7.735 7.263-103.131 96.766-107.894 105.144.522.17 16.312 5.544 17.715 6.035 2.285.965 4.269 5.301 3.285 7.965-1.895 1.746-78.519 62.013-79.621 62.856-5.122 2.464-10.043 1.212-15.226-.582-.69-.255-43.854-20.908-55.481-39.36-.936-2.666-.783-5.113-.672-7.914.51-.254 84.679-55.688 85.254-56.172 2.581-1.224 4.076-.706 6.746.172 1.887 1.313 17.875 16.25 20.594 15.961 2.723-1.087 104.976-104.478 111.614-111.188 3.566-3.591 44.21-43.136 47.792-51.773 7.588-17.87 17.365-32.109 38.879-25.757z">
+</path>
+
+</svg>
+    <style>
+        svg {display: none;}
+
+    </style>
+</head>
+
+<body>
+    <script>
+        function getRandomArbitrary(min, max) {
+            return Math.random() * (max - min) + min;
+          }
+        var body = document.body,
+            html = document.documentElement;
+
+        var height = Math.max(body.scrollHeight, body.offsetHeight,
+            html.clientHeight, html.scrollHeight, html.offsetHeight)-100;
+        var width = body.clientWidth;
+
+        var Engine = Matter.Engine,
+            Render = Matter.Render,
+            Runner = Matter.Runner,
+            Bodies = Matter.Bodies,
+            Composite = Matter.Composite;
+            Events = Matter.Events;
+        MouseConstraint = Matter.MouseConstraint;
+        Mouse = Matter.Mouse;
+
+        
+        var engine = Engine.create();
+        world = engine.world;
+        var render = Render.create({
+            element: document.body,
+            engine: engine,
+            options: {
+                width: width,
+                height: height,
+                wireframes: false
+            }
+        });
+
+        var boxLeft = Bodies.rectangle(width/2-width/4*3/2, height, 40, 150, {isStatic: true});
+        var boxRight = Bodies.rectangle(width/2+width/4*3/2, height, 40, 150, {isStatic: true});
+        
+        var tree = Matter.Bodies.fromVertices(
+            width/2, height-height/2.4, Matter.Svg.pathToVertices(document.getElementById("tree_path")), { collisionFilter: {category: 0b10}, isStatic: false , render: { fillStyle: "green", strokeStyle:"green" }}, true
+        )
+        var shovel = Matter.Bodies.fromVertices(
+            width/2, 0, Matter.Svg.pathToVertices(document.getElementById("shovel_path")), {isStatic: false , render: { fillStyle: "#b8a6a5", strokeStyle: "#b8a6a5"}}, true
+        )
+        Composite.add(world, [
+            Bodies.rectangle(width/2, height, width/4*3, 100, { isStatic: true }),
+            boxLeft,
+            boxRight,
+            tree,
+            shovel
+        ]);
+        
+        var mouse = Mouse.create(render.canvas),
+            mouseConstraint = MouseConstraint.create(engine, {
+                mouse: mouse,
+                collisionFilter: {mask: 0b1},
+                constraint: {
+                    
+                    stiffness: 0.2,
+                    render: {
+                        visible: false
+                    }
+                },
+                element: document.body
+            });
+
+        Composite.add(world, mouseConstraint);
+
+        render.mouse = mouse;
+        
+
+        Render.run(render);
+        done = [];
+        var runner = Runner.create();
+        Matter.Events.on(runner, "beforeUpdate", function(e) {
+
+            Composite.allBodies(world).forEach(function(body) {
+                if(body != tree && body != shovel){
+                    if(Matter.Body.getVelocity(body).y > 2.5){
+                        Matter.Body.applyForce(body, body.position, Matter.Vector.create(Matter.Common.random(-1e-5, 1e-5), 0))
+                        done.push(body);
+                    }
+                    if(Matter.Body.getVelocity(body).y > 3){
+                        Matter.Body.setVelocity(body, Matter.Vector.create(Matter.Body.getVelocity(body).x, 3))
+                    }
+                }
+
+            })
+        })
+        Runner.run(runner, engine);
+
+        function startSnow(){
+            setInterval(function(){
+                addSnow(3);
+            }, 100)
+        }
+
+        function stopSnow(){
+            clearInterval(startSnow);
+        }
+
+        function addSnow(amount){
+            for(let i = 0; i < amount; i++){
+                let snow = Bodies.circle(getRandomArbitrary(0, width), -10,getRandomArbitrary(1, 5), { friction: 10, restitution: 0.1 , render: { fillStyle: "white" }})
+                Composite.add(world, snow);
+            }
+        }
+
+        setTimeout(function (){
+  
+            tree.isStatic = true;
+            startSnow();
+          }, 1000)
+
+    </script>
+</body>
+
+</html>
